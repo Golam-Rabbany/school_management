@@ -12,4 +12,12 @@ class Group extends Model
     public function group_rel(){
         return $this->hasMany(Studnet::class, 'batch_id', 'id');
     }
+
+    public function group_class(){
+        return $this->hasOne(StudentClass::class, 'id', 'class_id');
+    }
+    public function group_shift(){
+        return $this->hasOne(Shift::class, 'id', 'shift_id');
+    }
+    
 }

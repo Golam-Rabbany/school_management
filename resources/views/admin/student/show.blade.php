@@ -18,23 +18,26 @@
                     </span>
                 </p>
                 <div class="my-5 px-6">
-                    <a href="#" class="text-gray-200 block rounded-lg text-center font-medium leading-6 px-6 py-3 bg-gray-900 hover:bg-black hover:text-white">Connect with <span class="font-bold">@pantazisoft</span></a>
+                    <a href="#" class="text-gray-200 block rounded-lg text-center font-medium leading-6 px-6 py-3 bg-gray-900 hover:bg-black hover:text-white">Connect with <span class="font-bold">{{$students->email}}</span></a>
                 </div>
-                <div class="flex justify-between items-center my-5 px-6">
+                {{-- <div class="flex justify-between items-center my-5 px-6">
                     <a href="" class="text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded transition duration-150 ease-in font-medium text-sm text-center w-full py-3">Phone</a>
                     <a href="" class="text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded transition duration-150 ease-in font-medium text-sm text-center w-full py-3">Email</a>
                     <a href="" class="text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded transition duration-150 ease-in font-medium text-sm text-center w-full py-3">Facebook</a>
                     <a href="" class="text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded transition duration-150 ease-in font-medium text-sm text-center w-full py-3">Instagram</a>
-                </div>
+                </div> --}}
 
                 <div class="w-full">
-                    <h3 class="font-medium text-gray-900 text-left px-6">Details</h3>
+                    <h3 class="font-medium text-xl text-gray-900 text-center px-6">Details</h3>
                     <div class="mt-2 w-full flex flex-col items-center overflow-hidden text-sm">
                         <a href="#" class="border-t border-gray-100 text-gray-600 py-4 pl-6 pr-3 w-full block hover:bg-gray-100 transition duration-150">
                             <span class="text-gray-500">Roll : </span><span>{{$students->roll}}</span>
                         </a>
                         <a href="#" class="border-t border-gray-100 text-gray-600 py-4 pl-6 pr-3 w-full block hover:bg-gray-100 transition duration-150">
                             <span class="text-gray-500">Registration : </span><span>{{$students->reg}}</span>
+                        </a>
+                        <a href="#" class="border-t border-gray-100 text-gray-600 py-4 pl-6 pr-3 w-full block hover:bg-gray-100 transition duration-150">
+                            <span class="text-gray-500">Phone : </span><span>0{{$students->phone}}</span>
                         </a>
                         <a href="#" class="border-t border-gray-100 text-gray-600 py-4 pl-6 pr-3 w-full block hover:bg-gray-100 transition duration-150">
                             <span class="text-gray-500">Father Name : </span><span>{{$students->fname}}</span>
@@ -52,7 +55,7 @@
                             <span class="text-gray-500">National Id : </span><span>{{$students->national_id}}</span>
                         </a>
                         <a href="#" class="border-t border-gray-100 text-gray-600 py-4 pl-6 pr-3 w-full block hover:bg-gray-100 transition duration-150">
-                            <span class="text-gray-500">Last Admission : </span><span>{{$students->admission}}</span>
+                            <span class="text-gray-500">Last Admission : </span><span>{{$students->last_admission}}</span>
                         </a>
 
                         

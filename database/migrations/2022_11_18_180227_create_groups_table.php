@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('groups', function (Blueprint $table) {
             $table->id();
-            $table->string('class_id');
-            $table->string('shift_id');
+            $table->foreignId('class_id')->constrained('student_classes')->onDelete('cascade');
+            $table->foreignId('shift_id')->constrained('shifts')->onDelete('cascade');
             $table->string('batch');
             $table->time('start_time')->nullable();
             $table->time('end_time')->nullable();

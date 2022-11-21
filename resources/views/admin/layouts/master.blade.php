@@ -133,7 +133,10 @@
                         <a class="dropdown-item" href="profile.html">My Profile</a>
                         <a class="dropdown-item" href="edit-profile.html">Edit Profile</a>
                         <a class="dropdown-item" href="settings.html">Settings</a>
-                        <a class="dropdown-item" href="login.html">Logout</a>
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+                            <a href="route('logout')" onclick="event.preventDefault(); this.closest('form').submit();" class="dropdown-item">Log Out</a>
+                        </form>
                     </div>
                 </li>
             </ul>
@@ -154,14 +157,39 @@
                     <ul>
                         <li class="menu-title">Main</li>
                         <li class="active">
-                            <a href="index-2.html"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
+                            <a href="{{route('admin.dashboard')}}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
+                        </li>
+                        <li class="submenu">
+                            <a href="#"><i class="fa-solid fa-graduation-cap"></i> <span> Department </span> <span
+                                    class="menu-arrow"></span></a>
+                            <ul style="display: none;">
+                                <li><a href="{{route('admin.class.create')}}">Create Department</a></li>
+                                <li><a href="{{route('admin.class.index')}}">View Department</a></li>
+                            </ul>
+                        </li>
+                        <li class="submenu">
+                            <a href="#"><i class="fa-solid fa-graduation-cap"></i> <span> Shift </span> <span
+                                    class="menu-arrow"></span></a>
+                            <ul style="display: none;">
+                                <li><a href="{{route('admin.shift.create')}}">Create Shift</a></li>
+                                <li><a href="{{route('admin.shift.index')}}">View Shift</a></li>
+                            </ul>
+                        </li>
+                        <li class="submenu">
+                            <a href="#"><i class="fa-solid fa-graduation-cap"></i> <span> Batch </span> <span
+                                    class="menu-arrow"></span></a>
+                            <ul style="display: none;">
+                                <li><a href="{{route('admin.group.create')}}">Create Batch</a></li>
+                                <li><a href="{{route('admin.group.index')}}">View Batch</a></li>
+                            </ul>
                         </li>
                         <li class="submenu">
                             <a href="#"><i class="fa-solid fa-graduation-cap"></i> <span> Student </span> <span
                                     class="menu-arrow"></span></a>
                             <ul style="display: none;">
-                                <li><a href="employees.html">Create Student</a></li>
-                                <li><a href="leaves.html">View Students</a></li>
+                                <li><a href="{{route('admin.student.create')}}">Create Student</a></li>
+                                <li><a href="{{route('admin.student.index')}}">View Students</a></li>
+                                <li><a href="">All Students</a></li>
                             </ul>
                         </li>
                         <li class="submenu">
@@ -169,12 +197,7 @@
                                     class="menu-arrow"></span></a>
                             <ul style="display: none;">
                                 <li><a href="employees.html">CSE</a></li>
-                                <li><a href="leaves.html">EEE</a></li>
-                                <li><a href="leaves.html">ME</a></li>
-                                <li><a href="leaves.html">Power</a></li>
-                                <li><a href="leaves.html">MC</a></li>
-                                <li><a href="leaves.html">AIDT</a></li>
-                                <li><a href="leaves.html">Civil</a></li>
+                                
                             </ul>
                         </li>
                         <li class="submenu">

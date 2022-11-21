@@ -3,8 +3,8 @@
 @section('admin_dashboard')
 <div class="m-3">
     <div class="flex justify-between mb-5">
-        <span class="text-2xl text-green-500 border-b">Create Subject</span>
-        <a href="{{route('admin.subject.index')}}" class="border px-3 py-2">View Subject</a>
+        <span class="text-2xl text-green-500 border-b">Create Group</span>
+        <a href="{{route('admin.subject.index')}}" class="border px-3 py-2">View Group</a>
     </div>
     <form action="{{route('admin.group.store')}}" method="POST">
         @csrf

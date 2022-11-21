@@ -15,14 +15,17 @@ return new class extends Migration
     {
         Schema::create('studnets', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->string('name');
+            $table->string('email');
+            $table->integer('phone');
             $table->string('fname');
             $table->string('mname');
             $table->string('address');
             $table->date('birth');
             $table->integer('national_id');
             $table->string('blood');
-            $table->string('admission');
+            $table->string('last_admission');
             $table->integer('class_id');
             $table->integer('shift_id');
             $table->foreignId('batch_id')->constrained('groups')->onDelete('cascade');

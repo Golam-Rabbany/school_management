@@ -6,9 +6,11 @@ use App\Models\Group;
 use App\Models\Shift;
 use App\Models\StudentClass;
 use App\Models\Studnet;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Bus\Batch;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class StudentController extends Controller
 {
@@ -29,6 +31,14 @@ class StudentController extends Controller
 
     public function store(Request $request)
     {
+        $user = new User();
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->email = $request->email;
+        $user->created_at = Carbon::now();
+        $user->password = Hash::make($request->email);
+        $user->save();
+
         if($request->hasFile('photo')){
             $uploaded = $request->file('photo');
             $extention=$uploaded->getClientOriginalName();
@@ -36,10 +46,15 @@ class StudentController extends Controller
             $uploaded->move('uploads/student/',$filename);
 
             $student = Studnet::insert($request->except('_token','photo')+[
-                'created_at' => Carbon::now(),
+                'user_id' => $user->id,
                 'photo' => $filename,
+                'created_at' => Carbon::now(),
             ]);
         }
+
+        
+        // 'password' => Hash::make($request->newPassword)
+
         return back();
         
     }
