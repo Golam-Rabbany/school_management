@@ -13,10 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('student_classes', function (Blueprint $table) {
+        Schema::create('student_payments', function (Blueprint $table) {
             $table->id();
-            $table->string('class_name');
-            $table->json('subject')->nullable();
+            $table->foreignId('student_id')->constrained('studnets')->onDelete('cascade');
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+            $table->string('pay_details');
+            $table->date('pay_date');
+            $table->integer('pay_amount');
             $table->timestamps();
         });
     }
@@ -28,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('student_classes');
+        Schema::dropIfExists('student_payments');
     }
 };

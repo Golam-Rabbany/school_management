@@ -16,6 +16,9 @@
                           <div class="font-semibold text-left">Registration</div>
                       </th>
                       <th class="p-2 whitespace-nowrap">
+                          <div class="font-semibold text-center">Payment</div>
+                      </th>
+                      <th class="p-2 whitespace-nowrap">
                           <div class="font-semibold text-center">Details</div>
                       </th>
                   </tr>
@@ -34,6 +37,11 @@
                         </td>
                         <td class="p-2 whitespace-nowrap">
                             <div class="text-left font-medium text-green-500">{{$student->reg}}</div>
+                        </td>
+                        <td class="p-2 whitespace-nowrap">
+                            <div class="text-lg flex justify-center">
+                                <a href="{{route('admin.payment.show',$student->id)}}"><p class="text-xs px-3 py-2 bg-yellow-500 text-white rounded-3xl">Pay Now</p></a>
+                            </div>
                         </td>
                         <td class="p-2 whitespace-nowrap">
                             <div class="text-lg flex justify-center">

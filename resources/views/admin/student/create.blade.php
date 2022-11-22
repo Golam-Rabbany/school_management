@@ -83,6 +83,9 @@
             <div class="">
                 <label for="text" class="text-sm font-medium text-gray-900 block mb-2">Roll</label>
                 <input type="number" name="roll"  class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required="">
+                @error('roll')
+                    <p class="text-sm text-red-500">{{ $message }}</p>
+                @enderror
             </div>
             <div class="">
                 <label for="text" class="text-sm font-medium text-gray-900 block mb-2">Registration</label>

@@ -29,7 +29,7 @@ return new class extends Migration
             $table->integer('class_id');
             $table->integer('shift_id');
             $table->foreignId('batch_id')->constrained('groups')->onDelete('cascade');
-            $table->integer('roll');
+            $table->integer('roll')->unique();
             $table->integer('reg');
             $table->string('photo');
             $table->timestamps();

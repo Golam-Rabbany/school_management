@@ -31,6 +31,11 @@ class StudentController extends Controller
 
     public function store(Request $request)
     {
+
+        $this->validate($request, [
+            'roll' => 'required|unique:studnets,roll', 
+        ]);
+
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;

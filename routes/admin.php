@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Admin\Auth\RegisteredUserController;
 use App\Http\Controllers\Admin\Auth\VerifyEmailController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\PaymentController;
 use App\Http\Controllers\Admin\SubjectController;
 use App\Http\Controllers\Admin\TeacherController;
 use App\Http\Controllers\ClassController;
@@ -90,6 +91,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('shift', ShiftController::class);
     Route::resource('group', GroupController::class);
     Route::resource('student', StudentController::class);
+
+    Route::resource('payment', PaymentController::class);
 
 
 

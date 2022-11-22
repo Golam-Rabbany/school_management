@@ -127,7 +127,7 @@
                             <img class="rounded-circle" src="{{asset('admin_dashboard/img/user.jpg')}}" width="24" alt="Admin">
                             <span class="status online"></span>
                         </span>
-                        <span>{{Auth::user()->name}}</span>
+                        <span>{{Auth::guard("admin")->user()->name}}</span>
                     </a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="profile.html">My Profile</a>
@@ -140,16 +140,7 @@
                     </div>
                 </li>
             </ul>
-            <div class="dropdown mobile-user-menu float-right">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i
-                        class="fa fa-ellipsis-v"></i></a>
-                <div class="dropdown-menu dropdown-menu-right">
-                    <a class="dropdown-item" href="profile.html">My Profile</a>
-                    <a class="dropdown-item" href="edit-profile.html">Edit Profile</a>
-                    <a class="dropdown-item" href="settings.html">Settings</a>
-                    <a class="dropdown-item" href="login.html">Logout</a>
-                </div>
-            </div>
+            
         </div>
         <div class="sidebar" id="sidebar">
             <div class="sidebar-inner slimscroll">
@@ -193,6 +184,22 @@
                             </ul>
                         </li>
                         <li class="submenu">
+                            <a href="#"><i class="fa-solid fa-person-chalkboard"></i><span> Teachers </span> <span
+                                    class="menu-arrow"></span></a>
+                            <ul style="display: none;">
+                                <li><a href="{{route('admin.teacher.create')}}">Create Teacher</a></li>
+                                <li><a href="{{route('admin.teacher.index')}}">View Teacher</a></li>
+                            </ul>
+                        </li>
+                        <li class="submenu">
+                            <a href="#"><i class="fa-solid fa-person-chalkboard"></i><span> Subject </span> <span
+                                    class="menu-arrow"></span></a>
+                            <ul style="display: none;">
+                                <li><a href="{{route('admin.subject.create')}}">Create Subject</a></li>
+                                <li><a href="{{route('admin.subject.index')}}">View Subject</a></li>
+                            </ul>
+                        </li>
+                        <li class="submenu">
                             <a href="#"><i class="fa-solid fa-graduation-cap"></i> <span> Department Student </span> <span
                                     class="menu-arrow"></span></a>
                             <ul style="display: none;">
@@ -200,14 +207,7 @@
                                 
                             </ul>
                         </li>
-                        <li class="submenu">
-                            <a href="#"><i class="fa-solid fa-person-chalkboard"></i><span> Teachers </span> <span
-                                    class="menu-arrow"></span></a>
-                            <ul style="display: none;">
-                                <li><a href="invoices.html">Create Teacher</a></li>
-                                <li><a href="payments.html">Attendence</a></li>
-                            </ul>
-                        </li>
+                       
                         <li class="submenu">
                             <a href="#"><i class="fa fa-book"></i> <span> Account Section </span> <span
                                     class="menu-arrow"></span></a>
