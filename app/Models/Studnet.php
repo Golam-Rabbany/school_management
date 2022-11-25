@@ -12,4 +12,9 @@ class Studnet extends Model
     public function group_student(){
         return $this->hasOne(Group::class, 'id', 'batch_id');
     }
+
+    // allstdntcontroller subject
+    public function class_group(){
+        return $this->hasOne(StudentClass::class, 'id', 'class_id');
+    }
 }

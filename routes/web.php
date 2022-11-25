@@ -35,6 +35,7 @@ Route::middleware('auth')->group(function () {
 Route::middleware('auth')->group(function () {
     Route::resource('/student', AllStudentController::class);
     Route::get('/payment/student', [AllStudentController::class, 'payment'])->name('payment.student');
+    Route::get('/subject/student', [AllStudentController::class, 'subject'])->name('subject.student');
 });
 
 require __DIR__.'/auth.php';

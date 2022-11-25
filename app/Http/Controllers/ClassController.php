@@ -14,7 +14,8 @@ class ClassController extends Controller
 
     public function index()
     {
-        return view('admin.class.index');
+        $datas = StudentClass::all();
+        return view('admin.class.index',compact('datas'));
     }
 
     public function create()
@@ -23,11 +24,16 @@ class ClassController extends Controller
         return view('admin.class.create',compact('sub'));
     }
 
+
     public function store(Request $request)
     {
-        $class = StudentClass::insert($request->except('_token')+[
-            'created_at' => Carbon::now(),
-        ]);
+        $class = new StudentClass();
+        $class->class_name = $request->class_name;
+        $class->subject = $request->subject;
+        $class->save();
+        // $class = StudentClass::insert($request->except('_token')+[
+        //     'created_at' => Carbon::now(),
+        // ]);
         return back();
     }
 

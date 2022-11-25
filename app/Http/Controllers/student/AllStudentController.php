@@ -54,4 +54,9 @@ class AllStudentController extends Controller
         $payments = StudentPayment::where('user_id', Auth::user()->id)->get();
         return view('student.payment',compact('payments'));
     }
+
+    public function subject(){
+        $details = Studnet::with(['group_student','class_group'])->where('user_id', Auth::user()->id)->first();
+        return view('student.subject',compact('details'));
+    }
 }

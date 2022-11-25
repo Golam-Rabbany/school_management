@@ -12,7 +12,8 @@ class ShiftController extends Controller
 
     public function index()
     {
-        return view('admin.shift.index');
+        $shifts = StudentClass::with('class_shift')->get();
+        return view('admin.shift.index',compact('shifts'));
     }
 
     public function create()

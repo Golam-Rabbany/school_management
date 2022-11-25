@@ -4,7 +4,7 @@
 <div class="m-3">
     <div class="flex justify-between mb-5">
         <span class="text-2xl text-green-500 border-b">Create Department</span>
-        <a href="{{route('admin.subject.index')}}" class="border px-3 py-2">View Department</a>
+        <a href="{{route('admin.class.index')}}" class="border px-3 py-2">View Department</a>
     </div>
     <form action="{{route('admin.class.store')}}" method="POST" enctype="multipart/form-data">
         @csrf
@@ -22,15 +22,15 @@
                   <div class="flex justify-end cursor-pointer">
                     <svg x-on:click="content.splice(content.indexOf(item),1)" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
+                    </svg>
                   </div>
-                  <input type="text" name="subject[]" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                  {{-- <select name="subject[]" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" id="">
+                  {{-- <input type="text" name="subject[]" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"> --}}
+                  <select name="subject[]" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" id="">
                     <option value="">--select--</option>
                     @foreach ($sub as $subject)
                     <option value="{{$subject->id}}">{{$subject->name}}</option>
                     @endforeach
-                  </select> --}}
+                  </select>
                 </div>
              </template>
     

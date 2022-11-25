@@ -17,6 +17,7 @@ use App\Http\Controllers\GroupController;
 use App\Http\Controllers\ShiftController;
 use App\Http\Controllers\StudentController;
 use App\Models\StudentClass;
+use App\Models\Subject;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('admin')->name('admin.')->group(function () {
@@ -86,6 +87,9 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('subject', [SubjectController::class, 'index'])->name('subject.index');
     Route::get('subject/create', [SubjectController::class, 'create'])->name('subject.create');
     Route::post('subject/store', [SubjectController::class, 'store'])->name('subject.store');
+    Route::delete('subject/trash/{id}', [SubjectController::class, 'trash'])->name('subject.trash');
+    Route::get('subject/edit/{id}', [SubjectController::class, 'edit'])->name('subject.edit');
+    Route::put('subject/update/{id}', [SubjectController::class, 'update'])->name('subject.update');
 
     Route::resource('class', ClassController::class);
     Route::resource('shift', ShiftController::class);

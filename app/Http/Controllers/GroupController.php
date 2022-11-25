@@ -13,7 +13,8 @@ class GroupController extends Controller
 
     public function index()
     {
-        
+       return $batches = StudentClass::with(['class_shift','class_batch'])->get();
+        return view('admin.group.index',compact('batches'));
     }
 
     public function create()

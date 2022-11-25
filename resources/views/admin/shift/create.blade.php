@@ -20,7 +20,11 @@
             </div>
             <div class="">
                 <label for="text" class="text-sm font-medium text-gray-900 block mb-2">Shift Name</label>
-                <input type="text" name="shift" id="category" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required="">
+                <select name="shift" id=""class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required="">
+                    <option value="">--select--</option>
+                    <option value="Morning">Morning</option>
+                    <option value="Day">Day</option>
+                </select>
             </div>
         </div>
         <button type="submit" 

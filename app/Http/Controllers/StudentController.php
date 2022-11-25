@@ -39,7 +39,6 @@ class StudentController extends Controller
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->email = $request->email;
         $user->created_at = Carbon::now();
         $user->password = Hash::make($request->email);
         $user->save();

@@ -151,6 +151,14 @@
                             <a href="{{route('admin.dashboard')}}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
                         </li>
                         <li class="submenu">
+                            <a href="#"><i class="fa-solid fa-person-chalkboard"></i><span> Subject </span> <span
+                                    class="menu-arrow"></span></a>
+                            <ul style="display: none;">
+                                <li><a href="{{route('admin.subject.create')}}">Create Subject</a></li>
+                                <li><a href="{{route('admin.subject.index')}}">View Subject</a></li>
+                            </ul>
+                        </li>
+                        <li class="submenu">
                             <a href="#"><i class="fa-solid fa-graduation-cap"></i> <span> Department </span> <span
                                     class="menu-arrow"></span></a>
                             <ul style="display: none;">
@@ -189,14 +197,6 @@
                             <ul style="display: none;">
                                 <li><a href="{{route('admin.teacher.create')}}">Create Teacher</a></li>
                                 <li><a href="{{route('admin.teacher.index')}}">View Teacher</a></li>
-                            </ul>
-                        </li>
-                        <li class="submenu">
-                            <a href="#"><i class="fa-solid fa-person-chalkboard"></i><span> Subject </span> <span
-                                    class="menu-arrow"></span></a>
-                            <ul style="display: none;">
-                                <li><a href="{{route('admin.subject.create')}}">Create Subject</a></li>
-                                <li><a href="{{route('admin.subject.index')}}">View Subject</a></li>
                             </ul>
                         </li>
                         <li class="submenu">
