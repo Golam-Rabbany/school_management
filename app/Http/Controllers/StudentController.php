@@ -86,14 +86,21 @@ class StudentController extends Controller
 
     public function show_student($id){
 
-        $students = Studnet::where('batch_id', $id)->get();
+         $students = Studnet::where('batch_id', $id)->get();
         return view('admin.department_student.show',compact('students'));
        
         //  $datas = Studnet::with('group_student')->where('class_id', $id)->get();
         // return $datas = Group::with('group_rel')->where('class_id', $id)->get();
     }
-
+    
     public function getGroupShiftSection($id){
         return Group::where('shift_id', $id)->get();
     }
+
+    public function all_student(){
+         $data = Studnet::with(['batch_student','batch_class'])->with(['batch_student', 'batch_shift'])->get();
+        //  $data = Studnet::with(['class_group','class_shift','group_student'])->get();
+        return view('admin.student.all_student',compact('data'));
+    }
+
 }

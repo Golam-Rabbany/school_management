@@ -102,6 +102,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
     //show departmental student
     Route::get('department/{id}', [StudentController::class, 'show_student'])->name('department');
+    Route::get('/all/student', [StudentController::class, 'all_student'])->name('all.student');
 
 
 

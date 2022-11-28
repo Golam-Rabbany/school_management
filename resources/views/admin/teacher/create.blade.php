@@ -4,7 +4,7 @@
     <div class="m-3">
         <div class="flex justify-between mb-5">
             <span class="text-2xl text-green-500 border-b">Create Teacher</span>
-            <span class="text-lg text-green-500"><a href="">View Teacher</a></span>
+            <span class="text-lg text-green-500"><a href="{{route('admin.teacher.index')}}">View Teacher</a></span>
         </div>
         <form action="{{route('admin.teacher.store')}}" method="POST">
             @csrf

@@ -13,7 +13,8 @@ class TeacherController extends Controller
 
     public function index()
     {
-        //
+        $teachers = Teacher::all();
+        return view('admin.teacher.index',compact('teachers'));
     }
 
     public function create()
